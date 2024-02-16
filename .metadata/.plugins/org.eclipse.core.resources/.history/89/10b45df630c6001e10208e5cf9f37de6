@@ -1,0 +1,33 @@
+package io.nology.Wales.intro.greeting;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class GreetingService {
+	
+	@Autowired
+private NameRepository namesRepository;
+	public String sayHello() {
+		// TODO Auto-generated method stub
+		return "hello from the service";
+	}
+	//this is going to clean data i think
+
+	public String sayGoodbye() {
+		// TODO Auto-generated method stub
+		return "goodbye from the service";
+	}
+
+	public String greet(String name) {
+		// TODO Auto-generated method stub
+		Optional<String> maybeName = this.namesRepository.findByName(name.toLowerCase());
+		if (maybeName.isPresent()) {
+			return maybeName.get().toUpperCase();
+		}
+		return null;
+	}
+
+}

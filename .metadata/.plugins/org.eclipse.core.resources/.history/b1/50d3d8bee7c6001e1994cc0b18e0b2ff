@@ -1,0 +1,1 @@
+package io.nology.wales.blogs.config;

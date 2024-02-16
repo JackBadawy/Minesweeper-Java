@@ -1,0 +1,15 @@
+package com.main;
+
+public class Main {
+// I will make a seperate class for the array and rendering method and simply call it here
+	public static void main(String[] args) {
+		MineGrid mineGrid = new MineGrid(10, 10);
+		Cell cell = mineGrid.getCell(0, 0);
+		cell.setIntValue(5);
+		cell.setCharValue('5');
+		
+		mineGrid.printMineGridMeta();
+		
+	}
+}
+

@@ -1,0 +1,69 @@
+# Project: Minesweeper
+
+## MVP
+
+Recreate a simplified version of the game Minesweeper to be played in the java console
+The game should be able to randomly generate 10 mines in a 10x10 grid
+The user will be able to enter a command that represents a coordinate to check a location for a mine
+The application will display a number from 0-8 depending on how many mines surround that location
+If the user selects a mine, the game will respond "boom!" and the game will be lost
+If every non-mine square has been revealed, the game is won
+Render the grid to the console after every user command
+
+## Bonuses (optional)
+
+Allow for the user to configure number of mines and grid size via a configuration.json file
+(Difficult) Discovering an empty square should reveal all squares around it, and cascade into other nearby empty squares
+
+this should be easy, we will use a multi d array for the grid!
+
+lets start by initializing the array then writing a function to display it correctly in the console!
+
+--Mine Grid 
+10x10 array of [3d]
+d1 = dist from mine 
+d2 = already clicked?
+d3 = mine? //might be able to remove, just have d1 = 0 be mine
+
+user inputs can be handles with a scanner, have user enter a grid address
+this will nessesitate another grid to be displayed to user showing grid adresseses
+
+investigating using a grid (new grid) instead of array 
+useing an array of objects now 
+final d of arrays will be object containing int (dist from mine) char (character to display)
+bool (isClicked) bool (is mine)
+
+decided to keep char in object to reduce logic needed to print minefield
+
+todo add display for just chars
+
+add way to input minefield adress (scanner obviously).
+
+deadline is friday 16th
+
+need to figure out maths for calculating distance from mine.
+
+decided to name method to print adresses as printMineGridAdresses though long i think it's 
+important to maintain similar naming conventions for readability.
+
+i've decided to store grid adresses in cell obj as well, this will reduce logic, 
+
+made method to print adresses and main grid, once i finish mvp i'll see about printing the
+grids next to each other some how. 
+
+according to google a 10x10 grid of minesweeper should have 10 or 11 mines (9x9 has 10) 
+
+going to call scanner player turn, cant think of a better name
+
+made new class, GameLogic, will put playerTurn() and initializeMines() here.
+also need to loop for opportunity to use inheritance, obstract and interface
+might not have an oportunity with a project like this but will probably be a good look to 
+show oop knowledge
+
+need to access grid from my GaameLogic file, i was thinking an abstract classwhere grid could be declared but then I decided 
+it would add unnessesary complexity to my code, if more behaviors are shared will definitly use abstract classes/interfaces.
+
+cant directly cast int to char for my purpose, I have discovered that casting an int to char 
++ '0' will give me the desired result!! 
+
+

@@ -1,0 +1,10 @@
+package com.main;
+
+public class MineGridUtilities {
+public static int[][][] GenerateMineGrid() {
+	//this array/grid has 10 rows, 10 cells per row and two boxes to put things into per cell
+	// Array legend: [column][cell][properties]
+		int[][][] MineGrid = new int[10][10][2]; //aat some point have 10's be preplaced by number pulled from json file.
+		return MineGrid;
+	}
+}

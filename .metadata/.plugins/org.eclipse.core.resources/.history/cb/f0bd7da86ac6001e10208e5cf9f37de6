@@ -1,0 +1,73 @@
+package com.main;
+
+public class MineGrid {
+	private Cell[][] grid;
+	
+public MineGrid(int sizeX, int sizeY) {
+	
+	
+	grid = new Cell[sizeX][sizeY];
+	
+	
+    
+    for (int i = 0; i < sizeX; i++) {
+        for (int j = 0; j < sizeY; j++) {
+          String gridAddress = generateGridAddress(i,j);
+                grid[i][j] = new Cell(0, '*', false, false, gridAddress); 
+            
+        }
+    }
+} //at some point have 10's be preplaced by number pulled from json file.
+
+private String generateGridAddress(int indexOne, int indexTwo) {
+    char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+    if (indexOne > 25 || indexOne < 0) {
+        return null;
+    }
+    return Character.toString(alphabet[indexOne]) + indexTwo;
+}
+
+public void printMineGridMeta() {
+    for (int i = 0; i < grid.length; i++) {
+        for (int j = 0; j < grid[i].length; j++) {
+            
+            int intValue = grid[i][j].getIntValue();
+            char charValue = grid[i][j].getCharValue();
+            boolean isFlagged = grid[i][j].isClicked();
+            boolean isMine = grid[i][j].isMine();
+            String address = grid[i][j].getGridAddress();
+            System.out.print("(" + intValue + "," + charValue + "," + isFlagged + "," + isMine + "," + address + ")");
+        }
+        System.out.println(); // moves to next line 
+    }
+}
+
+// this is real printMindGrid
+public void printMineGrid() {
+	System.out.println(); //just to add a bit of space at top of cons
+	for (int i = 0; i < grid.length; i++) {
+		for (int j = 0; j < grid.length; j++) {
+			char charToBeRendered = grid[i][j].getCharValue();
+			System.out.print("   " + charToBeRendered); //3 spaces
+		}
+		System.out.println();
+	}
+}
+
+public void printMineGridAdresses() {
+	System.out.println(); 
+	for (int i = 0; i < grid.length; i++) {
+		for (int j = 0; j < grid.length; j++) {}
+	}
+}
+
+public Cell getCell(int x, int y) {
+    return grid[x][y];
+}
+
+public void setCell(int x, int y, Cell cell) {
+    grid[x][y] = cell;
+}
+		
+	}
+

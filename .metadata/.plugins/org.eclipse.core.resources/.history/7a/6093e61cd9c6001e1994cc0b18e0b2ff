@@ -1,0 +1,18 @@
+package io.nology.wales.blogs;
+
+import org.springframework.stereotype.Service;
+
+import jakarta.transaction.Transactional;
+
+@Service
+@Transactional
+public class BlogPostService {
+	
+	@Autowired
+	private BlogPostRepository repo;
+	
+public String createPost() {
+	BlogPost newPost = new BlogPost();
+	newPost.setCatagory(data.getCatagory)
+	}
+}

@@ -1,0 +1,5 @@
+package io.nology.Wales.intro.greeting;
+
+public class NameRepository {
+
+}

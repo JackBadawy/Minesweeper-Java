@@ -1,0 +1,44 @@
+package com.main;
+// im make a class for the grid cells because i need to store chars in one index of the final demension of my grid array
+// and since this is java it's propbably important to use oop as much as possible
+public class Cell {
+private int distanceFromMine;
+private char charToBeRendered;
+private boolean hasBeenClicked;
+
+//constructor
+public Cell(int distanceFromMine, char charToBeRendered, boolean hasBeenClicked) {
+	this.distanceFromMine = distanceFromMine;
+	this.charToBeRendered = charToBeRendered;
+	this.hasBeenClicked = hasBeenClicked;
+}
+
+//because eclipse automatically named this getter 'is' i'm going to assume it's best practase for bool's
+public boolean isClicked() {
+	return hasBeenClicked;
+}
+
+public void setHasBeenClicked(boolean hasBeenClicked) {
+	this.hasBeenClicked = hasBeenClicked;
+}
+
+public int getIntValue() {
+	return distanceFromMine;
+}
+
+public void setIntValue(int distanceFromMine) {
+	this.distanceFromMine = distanceFromMine;
+}
+
+public char getCharValue() {
+	return charToBeRendered;
+}
+
+public void setCharValue(char charToBeRendered) {
+	this.charToBeRendered = charToBeRendered;
+}
+
+
+
+
+}

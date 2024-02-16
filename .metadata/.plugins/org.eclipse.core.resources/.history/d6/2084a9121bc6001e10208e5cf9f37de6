@@ -1,0 +1,27 @@
+package io.nology.Wales.intro.greeting;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class GreetingService {
+
+	public String sayHello() {
+		// TODO Auto-generated method stub
+		return "hello from the service";
+	}
+	//this is going to clean data i think
+
+	public String sayGoodbye() {
+		// TODO Auto-generated method stub
+		return "goodbye from the service";
+	}
+
+	public String greet(String name) {
+		// TODO Auto-generated method stub
+		if (name.toLowerCase().equals("Jack")) {
+			return "hi Jack your great!";
+		}
+		return String.format("hello", name.toUpperCase());
+	}
+
+}

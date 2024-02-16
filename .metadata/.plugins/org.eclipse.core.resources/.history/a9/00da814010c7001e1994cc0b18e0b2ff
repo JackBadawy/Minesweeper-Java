@@ -1,0 +1,5 @@
+package io.nology.wales.blogs;
+
+public class CreateBlogPostDTO {
+
+}

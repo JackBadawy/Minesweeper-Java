@@ -1,0 +1,33 @@
+package com.main;
+// im make a class for the grid cells because i need to store chars in one index of the final demension of my grid array
+// and since this is java it's propbably important to use oop as much as possible
+public class Cell {
+private int distanceFromMine;
+private char charToBeRendered; 
+
+//constructor
+public Cell(int distanceFromMine, char charToBeRendered) {
+	this.distanceFromMine = distanceFromMine;
+	this.charToBeRendered = charToBeRendered;
+}
+
+public int getIntValue() {
+	return distanceFromMine;
+}
+
+public void setIntValue(int distanceFromMine) {
+	this.distanceFromMine = distanceFromMine;
+}
+
+public char getCharValue() {
+	return charToBeRendered;
+}
+
+public void setCharValue(char charToBeRendered) {
+	this.charToBeRendered = charToBeRendered;
+}
+
+
+
+
+}

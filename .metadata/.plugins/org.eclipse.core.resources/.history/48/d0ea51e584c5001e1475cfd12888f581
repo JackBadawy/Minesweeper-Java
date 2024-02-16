@@ -1,0 +1,29 @@
+package com.main;
+
+public class MineGrid {
+	private Cell[][] grid;
+	
+public MineGrid(int sizeX, int sizeY) {
+	//this object has 10 rows, 10 cells per row data for cells is stored in it's instance of the cell object.
+	// Array legend: [column][cell][properties]
+	grid = new Cell[sizeX][sizeY];
+    // Initialize all cells with default values
+    for (int i = 0; i < sizeX; i++) {
+        for (int j = 0; j < sizeY; j++) {
+           
+                grid[i][j] = new Cell(0, '\0', false); // Default int value and char value
+            
+        }
+    }
+} //at some point have 10's be preplaced by number pulled from json file.
+
+public Cell getCell(int x, int y) {
+    return grid[x][y];
+}
+
+public void setCell(int x, int y, Cell cell) {
+    grid[x][y] = cell;
+}
+		
+	}
+

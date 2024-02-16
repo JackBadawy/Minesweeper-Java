@@ -1,0 +1,62 @@
+package com.main;
+
+public class MineGrid {
+	private Cell[][] grid;
+	
+public MineGrid(int sizeX, int sizeY) {
+	//this object has 10 rows, 10 cells per row data for cells is stored in it's instance of the cell object.
+	// Array legend: [column][cell][properties]
+	grid = new Cell[sizeX][sizeY];
+    // Initialize all cells with default values
+    for (int i = 0; i < sizeX; i++) {
+        for (int j = 0; j < sizeY; j++) {
+           
+                grid[i][j] = new Cell(0, '*', false, false); // Default int value and char value
+            
+        }
+    }
+} //at some point have 10's be preplaced by number pulled from json file.
+
+public void printMineGridMeta() {
+    for (int i = 0; i < grid.length; i++) {
+        for (int j = 0; j < grid[i].length; j++) {
+            
+            int intValue = grid[i][j].getIntValue();
+            char charValue = grid[i][j].getCharValue();
+            boolean isFlagged = grid[i][j].isClicked();
+            boolean isMine = grid[i][j].isMine();
+            System.out.print("(" + intValue + "," + charValue + "," + isFlagged + "," + isMine + ")");
+        }
+        System.out.println(); // moves to next line 
+    }
+}
+
+// this is real printMindGrid
+public void printMineGrid() {
+	System.out.println(); //just to add a bit of space at top of cons
+	for (int i = 0; i < grid.length; i++) {
+		for (int j = 0; j < grid.length; j++) {
+			char charToBeRendered = grid[i][j].getCharValue();
+			System.out.print("   " + charToBeRendered); //3 spaces
+		}
+		System.out.println();
+	}
+}
+
+public void printMineGridAdresses() {
+	System.out.println(); 
+	for (int i = 0; i < grid.length; i++) {
+		for (int j = 0; j < grid.length; j++) {}
+	}
+}
+
+public Cell getCell(int x, int y) {
+    return grid[x][y];
+}
+
+public void setCell(int x, int y, Cell cell) {
+    grid[x][y] = cell;
+}
+		
+	}
+
